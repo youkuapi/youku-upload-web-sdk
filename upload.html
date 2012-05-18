@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>YOUKU OPENAPI File Upload Demo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+        <script src="js/jquery-1.7.2.js"></script>
+        <script>
+            // 使用HTML5 功能上传视频
+            var USE_STREAM_UPLOAD = true;
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="page-header">
+                <h1>YOUKU OPENAPI File Upload Demo</h1>
+            </div>
+            <form class="well form-horizontal" name="video-upload">
+                <fieldset>
+                  <div class="control-group">
+                    <label class="control-label" for="fileInput">选择文件：</label>
+                    <div class="controls">
+                      <input class="input-file" id="fileInput" type="file" name="FileData">
+                    </div>
+                  </div> 
+                  <div class="control-group">
+                    <label class="control-label" for="input01">标题：</label>
+                    <div class="controls">
+                      <input type="text" class="input-xlarge" id="input01" name="title">
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="textarea">简介：</label>
+                    <div class="controls">
+                      <textarea class="input-xlarge" id="textarea" rows="3" name="description"></textarea>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="input02">标签：</label>
+                    <div class="controls">
+                      <input type="text" class="input-xlarge" id="input02" name="tags">
+                      <span class="help-inline"></span>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="category-node">类别：</label>
+                    <div class="controls">
+                      <select id="category-node" name="category" >
+                      </select>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">版权所有</label>
+                    <div class="controls">
+                      <label class="radio inline">
+                        <input type="radio" name="copyright_type" id="copyright_type2" value="original" checked="">
+                        原创
+                      </label>
+                      <label class="radio inline">
+                        <input type="radio" name="copyright_type" id="copyright_type1" value="reproduced">
+                        转载
+                      </label>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">视频权限</label>
+                    <div class="controls">
+                      <label class="radio inline">
+                        <input type="radio" name="public_type" id="public_type1" value="all" checked="">
+                        公开 
+                      </label>
+                      <label class="radio inline">
+                        <input type="radio" name="public_type" id="public_type2" value="friend">
+                        仅好友 
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-actions">
+                    <button type="submit" class="btn btn-primary start" id="btn-upload-start">
+                        <i class="icon-upload icon-white"></i>
+                        <span>开始上传</span>
+                    </button>
+                    <button class="btn" id="btn-upload-cancel">取消上传</button>
+                  </div>
+                </fieldset>
+                </form>
+            <div class="row" >
+                <div class="span5" id="upload-status-wraper" >
+                </div>
+            </div>
+            <br>
+            <div class="well">
+                <h3>说明</h3>
+                <ul>
+                    <li>最大支持上传<strong>1 GB</strong> 视频文件</li>
+                    <li>HTML5分片上传，每片数据最大<strong>10M</strong>，超过限额将导致上传失败</li>
+                    <li>允许上传的视频格式为：wmv,avi,dat,asf,rm,rmvb,ram,mpg,mpeg,3gp,mov,mp4,m4v,dvix,dv,dat,</br>
+                    mkv,flv,vob,ram,qt,divx,cpk,fli,flc,mod。不符合格式的视频将会被丢弃，请确保视频格式的正确性，避免上传失败</li>
+                    <li><strong>本程序仅支持高版本的chrome或firefox浏览器</strong></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+    <script src="js/upload.js"></script>
+</html>
